@@ -11,7 +11,7 @@ import pyspark.sql.functions as f
 import read as r
 import task1 as t1
 import task2 as t2
-
+import task3 as t3
 
 def main():
     spark_session = (SparkSession.builder
@@ -23,8 +23,8 @@ def main():
     title_akas_df = r.read_akas(spark_session)
     title_akas_df.show(truncate=False)
 
-    title_basic_df = r.read_title_basic(spark_session)
-    title_basic_df.show(truncate=False)
+    title_basics_df = r.read_title_basic(spark_session)
+    title_basics_df.show(truncate=False)
 
     title_crew_df = r.read_title_crew(spark_session)
     title_crew_df.show(truncate=False)
@@ -44,6 +44,8 @@ def main():
     t1.task1(title_akas_df)
 
     t2.task2(name_basics_df, 19)
+
+    t3.task3(title_basics_df, 'movie', 120)
 
 
 

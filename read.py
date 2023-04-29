@@ -24,8 +24,8 @@ def read_akas(spark_session):
 
 
 def read_title_basic(spark_session):
-    title_basic_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
-                                       t.StructField('titleType', t.IntegerType(), True),
+    title_basics_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
+                                       t.StructField('titleType', t.StringType(), True),
                                        t.StructField('primaryTitle', t.StringType(), True),
                                        t.StructField('originalTitle', t.StringType(), True),
                                        t.StructField('isAdult', t.IntegerType(), True),
@@ -36,9 +36,9 @@ def read_title_basic(spark_session):
                                        ])
 
     path = 'data/title.basics.tsv.gz'
-    title_basic_df = spark_session.read.csv(path, sep=r'\t', header=True, nullValue='null',
-                                            schema=title_basic_schema)
-    return title_basic_df
+    title_basics_df = spark_session.read.csv(path, sep=r'\t', header=True, nullValue='null',
+                                            schema=title_basics_schema)
+    return title_basics_df
 
 
 def read_title_crew(spark_session):
