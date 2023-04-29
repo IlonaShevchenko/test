@@ -264,3 +264,8 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all
 
 data/
+result/
+result.resilt1/
+result.resilt2/
+result.resilt3/
+result.resilt4/

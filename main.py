@@ -9,7 +9,7 @@ from pyspark.sql import SparkSession, Window
 import pyspark.sql.types as t
 import pyspark.sql.functions as f
 import read as r
-
+import task1 as t1
 
 def main():
     spark_session = (SparkSession.builder
@@ -18,8 +18,8 @@ def main():
                      .config(conf=SparkConf())
                      .getOrCreate())
 
-    akas_df = r.read_akas(spark_session)
-    akas_df.show(truncate=False)
+    title_akas_df = r.read_akas(spark_session)
+    title_akas_df.show(truncate=False)
 
     title_basic_df = r.read_title_basic(spark_session)
     title_basic_df.show(truncate=False)
@@ -38,6 +38,13 @@ def main():
 
     name_basics_df = r.read_name_basics(spark_session)
     name_basics_df.show(truncate=False)
+
+    t1.task1(title_akas_df)
+
+
+
+
+
 
 
 
