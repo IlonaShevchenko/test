@@ -10,6 +10,8 @@ import pyspark.sql.types as t
 import pyspark.sql.functions as f
 import read as r
 import task1 as t1
+import task2 as t2
+
 
 def main():
     spark_session = (SparkSession.builder
@@ -40,6 +42,8 @@ def main():
     name_basics_df.show(truncate=False)
 
     t1.task1(title_akas_df)
+
+    t2.task2(name_basics_df, 19)
 
 
 
