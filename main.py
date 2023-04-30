@@ -13,6 +13,7 @@ import task1 as t1
 import task2 as t2
 import task3 as t3
 import task4 as t4
+import task5 as t5
 
 def main():
     spark_session = (SparkSession.builder
@@ -50,7 +51,7 @@ def main():
 
     t4.task4(title_principals_df, name_basics_df, title_basics_df)
 
-
+    t5.task5(title_basics_df, title_akas_df)
 
 
 
