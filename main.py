@@ -14,6 +14,7 @@ import task2 as t2
 import task3 as t3
 import task4 as t4
 import task5 as t5
+import task6 as t6
 
 def main():
     spark_session = (SparkSession.builder
@@ -43,15 +44,23 @@ def main():
     name_basics_df = r.read_name_basics(spark_session)
     #name_basics_df.show(truncate=False)
 
+    print('TASK - 1')
     t1.task1(title_akas_df)
 
+    print('TASK - 2')
     t2.task2(name_basics_df, 19)
 
+    print('TASK - 3')
     t3.task3(title_basics_df, 'movie', 120)
 
+    print('TASK - 4')
     t4.task4(title_principals_df, name_basics_df, title_basics_df)
 
+    print('TASK - 5')
     t5.task5(title_basics_df, title_akas_df)
+
+    print('TASK - 6')
+    t6.task6(title_episode_df, title_basics_df)
 
 
 
