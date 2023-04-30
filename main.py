@@ -15,6 +15,7 @@ import task3 as t3
 import task4 as t4
 import task5 as t5
 import task6 as t6
+import task7 as t7
 
 def main():
     spark_session = (SparkSession.builder
@@ -62,7 +63,8 @@ def main():
     print('TASK - 6')
     t6.task6(title_episode_df, title_basics_df)
 
-
+    print('TASK - 7')
+    t7.task7(title_basics_df, title_ratings_df)
 
 
 
