@@ -2,7 +2,7 @@ import pyspark.sql.functions as f
 
 
 def task7(title_basics_df, title_ratings_df):
-    path = '/result/result76'
+    path = '/result/result7'
     i = 1
     result_df = None
     for start in range(1970, 2000, 10):

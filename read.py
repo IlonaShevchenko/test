@@ -38,6 +38,9 @@ def read_title_basic(spark_session):
     path = 'data/title.basics.tsv.gz'
     title_basics_df = spark_session.read.csv(path, sep=r'\t', header=True, nullValue='null',
                                             schema=title_basics_schema)
+    title_basics_df = title_basics_df.withColumn('genres', f.when(f.col('genres') == '\\N', None)
+                                                 .otherwise(f.split(title_basics_df.genres, ',')))
+    title_basics_df.show(truncate=False)
     return title_basics_df
 
 
