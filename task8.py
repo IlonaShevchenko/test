@@ -1,7 +1,16 @@
 import pyspark.sql.functions as f
 
 
-def task8(title_basics_df, title_ratings_df):
+def task8(title_basics_df, title_ratings_df, n):
+    """
+    Get n titles of the most popular movies/series etc. by each genre.
+    Args:
+        title_basics_df: dataframe from name.basics.tsv.gz
+        title_ratings_df: dataframe from title.ratings.tsv.gz
+        n: top titles
+    Returns:
+        csv-file with result of task in 'result/result8'
+    """
     path = 'result/result8'
     genres = ['Comedy', 'Adventure', 'Drama', 'Animation', 'Family', 'Short']
     i = 1

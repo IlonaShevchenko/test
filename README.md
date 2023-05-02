@@ -22,7 +22,7 @@ to enable teamwork and double-checking. In the future you will create
 your branches for each small piece of functionality from develop and
 create merge requests to develop (review process with your teammate).
 5. Create a project locally. Please, use a meaningful name as below.
-6. Add file .gitignore to your project. [23]
+6. Add file .gitignore to your project.
 7. Download IMDB datasets to your PC. Do not put them into the project
 repository.
 8. Look at the datasets. Explain, what data of what types do we have? It will
@@ -30,7 +30,7 @@ be useful for further development.
 
 #### Setup Stage
 1. Depending on the language you chose, follow appropriate instructions to
-set up Spark. [24]
+set up Spark.
 2. Try to create a test DataFrame and apply .show() method on it. If your
 data is shown as expected, congrats! We can move forward! If not, just
 manage the problem. Try to resolve the issue by yourself, but don’t

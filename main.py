@@ -59,16 +59,16 @@ def main():
     t4.task4(title_principals_df, name_basics_df, title_basics_df)
 
     print('TASK - 5')
-    t5.task5(title_basics_df, title_akas_df)
+    t5.task5(title_basics_df, title_akas_df, 100)
 
     print('TASK - 6')
-    t6.task6(title_episode_df, title_basics_df)
+    t6.task6(title_episode_df, title_basics_df, 50)
 
     print('TASK - 7')
-    t7.task7(title_basics_df, title_ratings_df)
+    t7.task7(title_basics_df, title_ratings_df, 10)
 
     print('TASK - 8')
-    t8.task8(title_basics_df, title_ratings_df)
+    t8.task8(title_basics_df, title_ratings_df, 10)
 
 
 # Press the green button in the gutter to run the script.
