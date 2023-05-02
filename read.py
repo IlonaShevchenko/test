@@ -3,6 +3,13 @@ import pyspark.sql.functions as f
 
 
 def read_akas(spark_session):
+    """
+    Read 'data/title.akas.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     akas_schema = t.StructType([t.StructField('titleId', t.StringType(), False),
                                 t.StructField('ordering', t.IntegerType(), False),
                                 t.StructField('title', t.StringType(), True),
@@ -24,6 +31,13 @@ def read_akas(spark_session):
 
 
 def read_title_basic(spark_session):
+    """
+    Read 'data/title.basics.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     title_basics_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
                                        t.StructField('titleType', t.StringType(), True),
                                        t.StructField('primaryTitle', t.StringType(), True),
@@ -45,6 +59,13 @@ def read_title_basic(spark_session):
 
 
 def read_title_crew(spark_session):
+    """
+    Read 'data/title.crew.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     title_crew_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
                                       t.StructField('directors', t.StringType(), True),
                                       t.StructField('writers', t.StringType(), True)
@@ -59,6 +80,13 @@ def read_title_crew(spark_session):
 
 
 def read_title_episode(spark_session):
+    """
+    Read 'data/title.episode.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     title_episode_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
                                          t.StructField('parentTconst', t.StringType(), True),
                                          t.StructField('seasonNumber', t.IntegerType(), True),
@@ -72,6 +100,13 @@ def read_title_episode(spark_session):
 
 
 def read_title_principals(spark_session):
+    """
+    Read 'data/title.principals.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     title_principals_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
                                             t.StructField('ordering', t.IntegerType(), True),
                                             t.StructField('nconst', t.StringType(), True),
@@ -91,11 +126,17 @@ def read_title_principals(spark_session):
 
 
 def read_title_ratings(spark_session):
+    """
+    Read 'data/title.ratings.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     title_ratings_schema = t.StructType([t.StructField('tconst', t.StringType(), False),
                                          t.StructField('averageRating', t.DoubleType(), True),
                                          t.StructField('numVotes', t.IntegerType(), True)
                                          ])
-
     path = 'data/title.ratings.tsv.gz'
     title_ratings_df = spark_session.read.csv(path, sep=r'\t', header=True, nullValue='null',
                                               schema=title_ratings_schema)
@@ -103,6 +144,13 @@ def read_title_ratings(spark_session):
 
 
 def read_name_basics(spark_session):
+    """
+    Read 'data/name.basics.tsv.gz'-file in DataFrame
+    Args:
+        spark_session: Spark session
+    Returns:
+        DataFrame
+    """
     name_basics_schema = t.StructType([t.StructField('nconst', t.StringType(), False),
                                        t.StructField('primaryName', t.StringType(), True),
                                        t.StructField('birthYear', t.IntegerType(), True),
@@ -110,7 +158,6 @@ def read_name_basics(spark_session):
                                        t.StructField('primaryProfession', t.StringType(), True),
                                        t.StructField('knownForTitles', t.StringType(), True)
                                        ])
-
     path = 'data/name.basics.tsv.gz'
     name_basics_df = spark_session.read.csv(path, sep=r'\t', header=True, nullValue='null',
                                             schema=name_basics_schema)
