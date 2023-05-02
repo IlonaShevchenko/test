@@ -26,25 +26,25 @@ def main():
                      .getOrCreate())
 
     title_akas_df = r.read_akas(spark_session)
-    title_akas_df.show(truncate=False)
+    # title_akas_df.show(truncate=False)
 
     title_basics_df = r.read_title_basic(spark_session)
-    title_basics_df.show(truncate=False)
+    # title_basics_df.show(truncate=False)
 
     title_crew_df = r.read_title_crew(spark_session)
-    title_crew_df.show(truncate=False)
+    # title_crew_df.show(truncate=False)
 
     title_episode_df = r.read_title_episode(spark_session)
-    title_episode_df.show(truncate=False)
+    # title_episode_df.show(truncate=False)
 
     title_principals_df = r.read_title_principals(spark_session)
-    title_principals_df.show(truncate=False)
+    # title_principals_df.show(truncate=False)
 
     title_ratings_df = r.read_title_ratings(spark_session)
-    title_ratings_df.show(truncate=False)
+    # title_ratings_df.show(truncate=False)
 
     name_basics_df = r.read_name_basics(spark_session)
-    name_basics_df.show(truncate=False)
+    # name_basics_df.show(truncate=False)
 
     print('TASK - 1')
     t1.task1(title_akas_df)
